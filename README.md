@@ -1,12 +1,14 @@
 # Rocket-launch-python-simulation
-A simple rocket launch simulation with a rough sketch of the drag coefficient.
+A simple rocket launch simulation that models thrust, fuel burn, gravity, atmospheric density, and aerodynamic drag.
+
+> This project was meant for learning and not to make a "professional" grade rocket simulation
 
 ## Features
 - Gravity
 - Fuel burn
-- Aerodynamic drag (Rough)
-- Atmospheric density layers (Non-gradual)
-- Velocity & height plots
+- Aerodynamic drag (simplified)
+- Atmospheric density layers (non-gradual)
+- Velocity & altitude plotting
 
 ## Technologies
 - Python
@@ -21,5 +23,9 @@ A simple rocket launch simulation with a rough sketch of the drag coefficient.
 ## Future improvements
 - 2d flight
 - Orbital mechanics
-- Variable gravity
-- Staging
+- Variable gravity with altitude
+- Rocket staging
+- Guidance systems
+
+## Notes
+AI assistance was used for minor debugging and physics clarification.
