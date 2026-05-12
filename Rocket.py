@@ -27,7 +27,7 @@ area = np.pi * radius**2
 rho = 1.225 #kg/m**3 while under 5500
 
 
-drag = 0.5 # Change drag to drag coefficent eventually
+drag = 0.5
 
 # Start Conditions
 
