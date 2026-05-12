@@ -79,7 +79,7 @@ while t < total_time:
         height = 0
         velocity = 0
 
-    # Convert into numpy arrays
+    # Append new data to lists
 
     time_list.append(t)
     height_list.append(height)
@@ -88,6 +88,8 @@ while t < total_time:
     total_mass_list.append(mass)
 
     t += dt
+
+# Convert into numpy arrays
 
 time_array = np.array(time_list)
 height_array = np.array(height_list)
