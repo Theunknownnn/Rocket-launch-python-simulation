@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Setup
 
-fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 4))
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 6))
 
 dt = 0.1
 total_time = 360 # second
@@ -27,7 +27,7 @@ area = np.pi * radius**2
 rho = 1.225 #kg/m**3 while under 5500
 
 
-drag = 0.5
+drag = 0.5 # Change drag to drag coefficent eventually
 
 # Start Conditions
 
@@ -37,6 +37,8 @@ velocity = 0
 time_list = []
 height_list = []
 velocity_list = []
+fuel_list = []
+total_mass_list = []
 
 t = 0
 
@@ -82,26 +84,41 @@ while t < total_time:
     time_list.append(t)
     height_list.append(height)
     velocity_list.append(velocity)
-
-    time_array = np.array(time_list)
-    height_array = np.array(height_list)
-    velocity_array = np.array(velocity_list)
+    fuel_list.append(fuel_mass)
+    total_mass_list.append(mass)
 
     t += dt
 
+time_array = np.array(time_list)
+height_array = np.array(height_list)
+velocity_array = np.array(velocity_list)
+fuel_array = np.array(fuel_list)
+total_mass_array = np.array(total_mass_list)
 # Plotting
 
-axes[0].plot(time_array,velocity_array)
-axes[0].set_title("Velocity")
-axes[0].set_xlabel("Time (s)")
-axes[0].set_ylabel("Velocity (m/s)")
-axes[0].grid(True)
+axes[0,0].plot(time_array,velocity_array)
+axes[0,0].set_title("Velocity")
+axes[0,0].set_xlabel("Time (s)")
+axes[0,0].set_ylabel("Velocity (m/s)")
+axes[0,0].grid(True)
 
-axes[1].plot(time_array,height_array)
-axes[1].set_title("Height")
-axes[1].set_xlabel("Time (s)")
-axes[1].set_ylabel("Height (m)")
-axes[1].grid(True)
+axes[0,1].plot(time_array,height_array)
+axes[0,1].set_title("Height")
+axes[0,1].set_xlabel("Time (s)")
+axes[0,1].set_ylabel("Height (m)")
+axes[0,1].grid(True)
+
+axes[1,0].plot(time_array,fuel_array)
+axes[1,0].set_title("Fuel mass")
+axes[1,0].set_xlabel("Time (s)")
+axes[1,0].set_ylabel("Fuel (kg)")
+axes[1,0].grid(True)
+
+axes[1,1].plot(time_array,total_mass_array)
+axes[1,1].set_title("Total mass")
+axes[1,1].set_xlabel("Time (s)")
+axes[1,1].set_ylabel("Mass (kg)")
+axes[1,1].grid(True)
 
 # AI was used for minor debugging.
 
