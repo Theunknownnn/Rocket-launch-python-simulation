@@ -27,5 +27,7 @@ A simple rocket launch simulation that models thrust, fuel burn, gravity, atmosp
 - Rocket staging
 - Guidance systems
 
+<img width="1000" height="400" alt="Simple_launch" src="https://github.com/user-attachments/assets/6439c090-20c0-49bf-a8be-a16b024e0f9b" />
+
 ## Notes
 AI assistance was used for minor debugging and physics clarification.
